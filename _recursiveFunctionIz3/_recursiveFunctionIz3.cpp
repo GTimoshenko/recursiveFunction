@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
-
+/*
+*/
 int recursiveFuncComp(int y, int x) {
 	if (y == 0) {
 		cout << endl;
@@ -17,12 +18,14 @@ int recursiveFuncComp(int y, int x) {
 }
 
 void showProblemScheme() {
+	setlocale(LC_ALL, "Russian");
 	cout << "Схема рекурсии по заданным функциям:" << endl << endl
 		 << "{ f(0,x) = g(x) = 0" << endl
 		 << "{ h(y,f(y,x),x) = f(y+1,x) = y + f(y,x) + x" << endl << endl;
 }
 
 void compStep() {
+	setlocale(LC_ALL, "Russian");
 	int stopFlag = 1, x, y;
 	while (stopFlag == 1) {
 		cout << endl;
@@ -46,7 +49,6 @@ void compStep() {
 }
 
 int main() {
-	setlocale(LC_ALL, "Russian");
 	showProblemScheme();
 	compStep();
 	return 0;
