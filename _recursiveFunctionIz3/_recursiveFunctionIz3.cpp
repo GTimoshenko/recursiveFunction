@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
-/*
+/*функция recursiveFuncComp получает на вход:
+* int y - вводимое пользователем значение Y
+* int x - вводимое пользователем значение Х
+* Обрабатывает полученные значения у и х, рассчитывает рекурсивную функцию.
+* Возвращает 0 в случае, если мы дошли до начала рекурсии, в другом же случае - nextStep(следующий выводимый шаг).
 */
 int recursiveFuncComp(int y, int x) {
 	if (y == 0) {
@@ -16,16 +20,19 @@ int recursiveFuncComp(int y, int x) {
 		 << x << ") = " << nextStep << endl; 
 		return nextStep;
 }
-
+/*функция showProblemScheme ничего не получает на вход, не возвращает.
+* Выводит схему рекурсии.
+*/
 void showProblemScheme() {
-	setlocale(LC_ALL, "Russian");
 	cout << "Схема рекурсии по заданным функциям:" << endl << endl
 		 << "{ f(0,x) = g(x) = 0" << endl
 		 << "{ h(y,f(y,x),x) = f(y+1,x) = y + f(y,x) + x" << endl << endl;
 }
-
+/*функция compStep ничего не получает на вход, не возвращает.
+* Считывает из консоли х и у, передает их функции recursiveFuncStep.
+* После обработки предлагает ввести новую строку или выйти из программы, проверяет ответ пользователя.
+*/
 void compStep() {
-	setlocale(LC_ALL, "Russian");
 	int stopFlag = 1, x, y;
 	while (stopFlag == 1) {
 		cout << endl;
@@ -49,6 +56,7 @@ void compStep() {
 }
 
 int main() {
+	setlocale(LC_ALL, "Russian");
 	showProblemScheme();
 	compStep();
 	return 0;
