@@ -7,13 +7,14 @@ using namespace std;
 * Возвращает 0 в случае, если мы дошли до начала рекурсии, в другом же случае - nextStep(следующий выводимый шаг).
 */
 int recursiveFuncComp(int y, int x) {
+	int currStep, nextStep;
 	if (y == 0) {
 		cout << endl;
 		cout << "f(0," << x << ") = g(" << x << ") = 0" << endl;
 		return 0;
 	}
-	int currStep = recursiveFuncComp(y - 1, x);
-	int nextStep = (y*(y-1)/2) + y * x;
+	currStep = recursiveFuncComp(y - 1, x);
+	nextStep = (y*(y-1)/2) + y * x;
 	cout << "f(" << y << "," << x << ") = h("
 		 << y - 1 << ",f(" << y - 1 << "," << x
 		 << ")," << x  << ") " << "= h(" << y - 1 << "," << currStep << ","
